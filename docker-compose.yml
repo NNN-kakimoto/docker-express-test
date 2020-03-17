@@ -1,0 +1,14 @@
+version: '3'
+services:
+  app:
+    image: node:13.10.1
+    ports:
+      - 3000:3000
+    command: "node app.js"
+    # ↓ 足す
+    extra_hosts:
+      - 'uyu.pun:192.168.1.11'
+      - 'admin.uyu.pun:192.168.1.11'
+    volumes:
+      - ./:/src
+    working_dir: /src
